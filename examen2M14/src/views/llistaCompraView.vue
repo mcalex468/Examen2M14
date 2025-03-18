@@ -14,7 +14,7 @@
 
         <!-- Llista de productes -->
         <ul class="llista">
-            <li v-for="element in llistaCompra" :key="element.nomElement" :class="{
+            <li v-for="element in llistaCompra" :key="element.id" :class="{
                 comprat: element.comprat,
                 prioritari: element.altaPrioritat
             }">
@@ -31,6 +31,7 @@ const llistaCompra = ref([]);
 const nomElement = ref('');
 const prioritari = ref(false);
 const comprat = ref(false);
+const id = ref(1);
 
 const afegirElement = () => {
     if (!nomElement.value.trim()) {
@@ -38,6 +39,7 @@ const afegirElement = () => {
         return;
     }
     llistaCompra.value.unshift({
+        id: id.value++,
         nom: nomElement.value,
         comprat: comprat.value,
         altaPrioritat: prioritari.value
