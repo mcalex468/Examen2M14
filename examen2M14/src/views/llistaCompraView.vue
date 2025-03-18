@@ -1,9 +1,10 @@
 <template>
-  <div class="container">
-    <h1>This is a Home page</h1>
-    <p>Esto es el home , donde encontraras ...</p>
-  </div>
-</template>
+    <div class="container">
+      <h1>This is a Llista page</h1>
+      <p>Aqui encontraras una lista de la compra</p>
+    </div>
+  </template>
+  
 
 <style scoped>
 .container {

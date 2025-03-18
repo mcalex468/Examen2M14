@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <h1>This is a Home page</h1>
-    <p>Esto es el home , donde encontraras ...</p>
+    <h1>This is an API Aigua page</h1>
+    <p>Aqui encontraras llamas a API</p>
   </div>
 </template>
 
