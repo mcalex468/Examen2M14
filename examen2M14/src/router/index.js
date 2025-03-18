@@ -13,6 +13,13 @@ const router = createRouter({
       path: '/aigua',
       name: 'about',
       component: () => import('../views/aiguaView.vue'),
+      props: true,
+    },
+    {
+      path: '/aigua/:nom',
+      name: 'aigua',
+      component: () => import('../views/aiguaDetallView.vue'),
+      props: true,
     },
     {
       path: '/llistaCompra',
