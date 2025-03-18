@@ -3,7 +3,9 @@
     <header>
       <Navigation />
     </header>
-    <router-view />
+    <main>
+      <router-view />
+    </main>
   </div>
 </template>
 
@@ -12,7 +14,8 @@ import Navigation from './components/Navigation.vue'
 </script>
 
 
-<style scoped>/* app.css */
+<style scoped>
+/* app.css */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
@@ -30,5 +33,4 @@ main {
   flex-grow: 1;
   padding: 20px;
 }
-
 </style>

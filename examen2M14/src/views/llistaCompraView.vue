@@ -1,28 +1,106 @@
 <template>
-    <div class="container">
-      <h1>This is a Llista page</h1>
-      <p>Aqui encontraras una lista de la compra</p>
+    <div class="contenedor">
+        <h1>Llista de la Compra</h1>
+
+        <!-- Formulario per afegir elements -->
+        <div class="formulario">
+            <input v-model="nomElement" type="text" placeholder="Afegeix un producte" />
+            <label>
+                <input v-model="prioritari" type="checkbox" /> Prioritari</label>
+            <label>
+                <input v-model="comprat" type="checkbox" />Comprat</label>
+            <button @click="afegirElement">Afegir Element</button>
+        </div>
+
+        <!-- Llista de productes -->
+        <ul class="llista">
+            <li v-for="element in llistaCompra" :key="element.nomElement" :class="{
+                comprat: element.comprat,
+                prioritari: element.altaPrioritat
+            }">
+                {{ element.nom }}
+            </li>
+        </ul>
     </div>
-  </template>
-  
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const llistaCompra = ref([]);
+const nomElement = ref('');
+const prioritari = ref(false);
+const comprat = ref(false);
+
+const afegirElement = () => {
+    if (!nomElement.value.trim()) {
+        alert("¡Debes rellenar el campo antes de agregar un elemento!");
+        return;
+    }
+    llistaCompra.value.unshift({
+        nom: nomElement.value,
+        comprat: comprat.value,
+        altaPrioritat: prioritari.value
+    });
+
+    // Resetear valores
+    nomElement.value = '';
+    prioritari.value = false;
+    comprat.value = false;
+};
+</script>
 
 <style scoped>
-.container {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: 20px auto;
-  text-align: center;
+.contenedor {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-h1 {
-  color: #333;
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-p {
-  color: #666;
+button {
+    padding: 8px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
+button:hover {
+    background-color: #2980b9;
+}
+
+.llista {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.llista li {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 6px;
+}
+
+.comprat {
+    text-decoration: line-through;
+    color: green;
+    background-color: #eaf8ea;
+}
+
+.prioritari {
+    color: red;
+    font-weight: bold;
+    background-color: #fde8e8;
+}
 </style>
