@@ -2,6 +2,7 @@
   <nav>
     <router-link to="/">Home</router-link>
     <router-link to="/aigua">Aigua</router-link>
+    <router-link to="/pokemons">Pokemons</router-link>
     <router-link to="/llistaCompra">Llista de Compra</router-link>
   </nav>
 </template>

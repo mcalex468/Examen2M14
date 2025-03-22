@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { useEmbassaments } from '../composables/useEmbassaments';
+import { useEmbassaments } from '../../composables/useEmbassaments';
 const { uniqueEmbassaments } = useEmbassaments();
 </script>
 
@@ -55,5 +55,4 @@ h1 {
 .embassament-link:hover {
   background-color: #1d80ebd7;
 }
-
 </style>
