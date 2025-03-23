@@ -2,6 +2,8 @@
   <div class="contenedor">
     <h1>Llistat d’Embassaments</h1>
     <ul class="embassament-list">
+      <!-- Aqui en el router-link debemos poner el path del detalle -->
+      <!-- '/aigua/:nom' -->
       <li v-for="(embassament, index) in uniqueEmbassaments" :key="index">
         <router-link :to="`/aigua/${embassament.estaci}`" class="embassament-link">
           {{ embassament.estaci }}

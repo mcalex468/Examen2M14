@@ -2,6 +2,8 @@
     <div class="contenedor">
         <h1>Lista de Pokémon</h1>
 
+        <!-- Aqui en el router-link debemos poner el path del detalle -->
+        <!-- '/pokemons/:name' -->
         <ul class="pokemon-list">
             <li v-for="pokemon in pokemons" :key="pokemon.name">
                 <router-link :to="`/pokemons/${pokemon.name}`" class="pokemon-link">
