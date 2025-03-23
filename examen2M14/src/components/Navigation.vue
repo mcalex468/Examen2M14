@@ -6,6 +6,7 @@
     <router-link to="/llistaCompra">Llista de Compra</router-link>
     <router-link to="/usuaris">Llista de Usuaris</router-link>
     <router-link to="/contador">Contador</router-link>
+    <router-link to="/lista">Lista Tareas</router-link>
   </nav>
 </template>
 <style scoped>
