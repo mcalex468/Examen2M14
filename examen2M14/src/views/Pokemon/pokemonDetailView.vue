@@ -1,23 +1,20 @@
 <template>
     <div>
-        <h1>Detall del Pokemon {{ nom }}</h1>
-        <p v-if="loading">Carregant dades...</p>
+        <h1>Detalle del Pokémon</h1>
+        <p v-if="loading">Cargando datos...</p>
         <p v-if="error">{{ error }}</p>
 
-        <div>
-            <div v-for="pokemon in pokemonDetail" :key="pokemon.name" class="pokemon-detall">
-                <p><strong>Base:</strong> {{ pokemon.base_experience }}</p>
-                <p><strong>Heigth:</strong> {{ pokemon.heigth }}</p>
-                <p><strong>Name:</strong> {{ pokemon.name }}</p>
-                <p><strong>Order:</strong> {{ pokemon.order }}</p>
-                <p><strong>Weight:</strong> {{ pokemon.weight }}</p>
-                <p v-if="pokemon.base_experience && pokemon.heigth">
-                    <strong>Daño Total:</strong>
-                    {{ calcularDaño(item.base_experience, item.heigth) }}
-                </p>
-                <hr />
-                <button @click="$router.push('/pokemons')">Tornar</button>
-            </div>
+        <div v-for="pokemon in pokemonDetail" :key="pokemon.name" class="pokemon-detall">
+            <h2>{{ pokemon.name }}</h2>
+            <p><strong>Base Experience:</strong> {{ pokemon.base_experience }}</p>
+            <p><strong>Height:</strong> {{ pokemon.height }}</p>
+            <p><strong>Weight:</strong> {{ pokemon.weight }}</p>
+            <p><strong>Order:</strong> {{ pokemon.order }}</p>
+            <p v-if="pokemon.base_experience && pokemon.height">
+                <strong>Daño Total:</strong> {{ calcularDaño(pokemon.base_experience, pokemon.height) }}
+            </p>
+            <hr />
+            <button @click="$router.push('/pokemons')">Volver</button>
         </div>
     </div>
 </template>
@@ -25,21 +22,23 @@
 <script setup>
 import { onMounted } from 'vue';
 import { useRoute } from 'vue-router';
-import { usePokemons } from '../composables/usePokemons.js';
+import { usePokemons } from '../../composables/usePokemons.js';
 
-const { pokemonDetail, loading, error } = usePokemons();
+const { pokemonDetail, loading, error, getPokemonDetail } = usePokemons();
 const route = useRoute();
-const nom = route.params.nom;
+const name = route.params.name;
 
-function calcularDaño(base, daño) {
-    return (base * daño).toFixed(2);
+function calcularDaño(base, altura) {
+    return (base * altura).toFixed(2);
 }
 
-onMounted(() => getPokemonDetail(nom));
+onMounted(() => {
+    getPokemonDetail(name);
+});
 </script>
 
 <style scoped>
-.embassament-detall {
+.pokemon-detall {
     background: #f8f8f8;
     padding: 15px;
     border-radius: 10px;

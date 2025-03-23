@@ -4,7 +4,7 @@
 
         <ul class="pokemon-list">
             <li v-for="pokemon in pokemons" :key="pokemon.name">
-                <router-link :to="`/${pokemon.name}`" class="pokemon-link">
+                <router-link :to="`/pokemons/${pokemon.name}`" class="pokemon-link">
                     {{ pokemon.name }}
                 </router-link>
             </li>
@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import { usePokemons } from '../composables/usePokemons.js';
+import { usePokemons } from '../../composables/usePokemons.js';
 
 const { pokemons, loading, error } = usePokemons();
 </script>

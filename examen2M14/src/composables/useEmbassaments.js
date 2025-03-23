@@ -7,6 +7,15 @@ export function useEmbassaments() {
   const uniqueEmbassaments = ref([]);
   const dades = ref([]);
 
+  // REGLA ORO 
+  // API DEVUELVE UN ARRARY - ASIGNAR DIRECTAMENTE
+  // API DEVUELVE UN OBJETO, Y QUIERO UN ARRAY, ASIGNAR DENTRO DE [];
+
+  /*
+   CASO API AIGUA, DEVUELVE ARRAY 0, ARRAY 1, DENTRO ENCONTRAMOSLA INFO
+   DE CADA, POR ESO ASIGNAMOS pokemons.value = response.data.results
+   */
+
   // Obtener los datos de la API
   const getEmbassaments = async () => {
     try {
@@ -17,6 +26,11 @@ export function useEmbassaments() {
       console.error('Error al obtener los datos:', err);
     }
   };
+
+  /*
+  En aiguaDetall la API ya devuelve un array, no un objeto
+  así que solo asignas response.data, no se necesita poner [] , porque ya es un array
+  */
 
   // Filtrar embalses únicos
   const filterUniqueEmbassaments = () => {
@@ -30,7 +44,11 @@ export function useEmbassaments() {
       }
     });
   };
-  
+
+  /*
+  En aiguaDetall la API ya devuelve un array, así que solo asignas response.data
+  */
+
   // Obtener detalles de un embalse específico
   const getDetallEmbassament = async (nom) => {
     try {
