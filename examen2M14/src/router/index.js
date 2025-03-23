@@ -51,7 +51,25 @@ const router = createRouter({
     {
       path: '/lista',
       name: 'lista',
-      component: () => import('../views/ListaTareas/listaTareas.vue')
+      component: () => import('../views/ListaTareas(ProvideInject)/listaTareas.vue')
+    },
+    {
+      path: '/posts',
+      name: 'posts',
+      component: () => import('../views/Posts/PostsView.vue'),
+      props: true
+    },
+    {
+      path: '/posts/:id',
+      name: 'postsId',
+      component: () => import('../views/Posts/PostIdView.vue'),
+      props: true
+    },
+    {
+      path: '/posts/user/:userId',
+      name: 'postsUserId',
+      component: () => import('../views/Posts/PostsUsersView.vue'),
+      props: true
     },
   ]
 });
