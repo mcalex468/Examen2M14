@@ -4,11 +4,12 @@ import HomeView from '../views/HomeView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    /*
     {
       path: '/',
       name: 'home',
       component: HomeView,
-    },
+    },*/
     {
       path: '/aigua',
       name: 'about',
@@ -22,11 +23,6 @@ const router = createRouter({
       props: true,
     },
     {
-      path: '/llistaCompra',
-      name: 'llistaCompra',
-      component: () => import('../views/llistaCompraView.vue')
-    },
-    {
       path: '/pokemons',
       name: 'pokemons',
       component: () => import('../views/Pokemon/pokemonView.vue')
@@ -36,7 +32,22 @@ const router = createRouter({
       name: 'pokemonDetail',
       component: () => import('../views/Pokemon/pokemonDetailView.vue'),
       props: true
-    }
+    },
+    {
+      path: '/llistaCompra',
+      name: 'llistaCompra',
+      component: () => import('../views/llistaCompraView.vue')
+    },
+    {
+      path: '/usuaris',
+      name: 'usuarisLlista',
+      component: () => import('../views/usuarisLlista.vue')
+    },
+    {
+      path: '/contador',
+      name: 'contador',
+      component: () => import('../views/ContadorBoton.vue')
+    },
   ]
 });
 
