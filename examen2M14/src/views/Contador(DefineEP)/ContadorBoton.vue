@@ -8,7 +8,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import BotonAccion from './Boton.vue';
+import BotonAccion from '../Contador(DefineEP)/Boton.vue';
 
 const contador = ref(0);
 

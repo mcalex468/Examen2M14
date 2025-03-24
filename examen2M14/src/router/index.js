@@ -46,7 +46,7 @@ const router = createRouter({
     {
       path: '/contador',
       name: 'contador',
-      component: () => import('../views/ContadorBoton.vue')
+      component: () => import('../views/Contador(DefineEP)/ContadorBoton.vue')
     },
     {
       path: '/lista',

@@ -6,7 +6,7 @@
 import { defineProps, defineEmits } from 'vue';
 
 defineProps({
-    texto: String // Texto del botón (ejemplo: "Sumar", "Restar")
+    texto: String // Texto del botón (ejemplo: texto="Sumar", texto="Restar")
 });
 
 defineEmits(['accion']); // Evento que se emitirá cuando se haga clic
