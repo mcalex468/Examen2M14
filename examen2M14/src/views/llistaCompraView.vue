@@ -14,6 +14,7 @@
 
         <!-- Llista de productes -->
         <ul class="llista">
+            <!-- v-bind en :class para asignar el style -->
             <li v-for="element in llistaCompra" :key="element.id" :class="{
                 comprat: element.comprat,
                 prioritari: element.altaPrioritat
@@ -38,6 +39,7 @@ const afegirElement = () => {
         alert("¡Debes rellenar el campo antes de agregar un elemento!");
         return;
     }
+    // Agregamos los elementos al principio del ARRAY
     llistaCompra.value.unshift({
         id: id.value++,
         nom: nomElement.value,
