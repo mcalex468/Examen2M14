@@ -7,7 +7,8 @@
 
 <script setup>
 import { ref, inject } from 'vue';
-
+// INYECTAMOS LA FUNCION AGREGAR TAREA -> MANEJAMOS EL TEXTO 
+//  V-MODEL Y LO AGREGAMOS USANDO LA FUNCION INYECTADA
 const nuevaTarea = ref('');
 const agregarTarea = inject('agregarTarea');
 

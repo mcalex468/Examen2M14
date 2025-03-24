@@ -8,7 +8,7 @@
 
 <script setup>
 import { inject } from 'vue';
-
+// INYECTAMOS EL ARRAY DE TAREAS --> PRINTARLO POSTERIORMENTE
 const tareas = inject('tareas');
 </script>
 

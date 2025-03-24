@@ -10,7 +10,7 @@
 import { ref, provide } from 'vue';
 import FormularioTarea from './formularioTarea.vue';
 import ListaItems from './listaItems.vue';
-
+// COMPONENTE PADRE --> PROVEEMOS LA FUNCION Y ARRAY 
 const tareas = ref([
     { id: 1, texto: 'Aprender Vue', completada: false },
     { id: 2, texto: 'Hacer ejercicios', completada: true }
