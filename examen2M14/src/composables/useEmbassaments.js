@@ -3,9 +3,9 @@ import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
 export function useEmbassaments() {
-  const embassaments = ref([]);
-  const uniqueEmbassaments = ref([]);
-  const dades = ref([]);
+  const embassaments = ref([]); // Embassaments Repetidos
+  const uniqueEmbassaments = ref([]); // Embassaments SIN Repetir
+  const dades = ref([]); // Por nombre
 
   // REGLA ORO 
   // API DEVUELVE UN ARRARY - ASIGNAR DIRECTAMENTE
@@ -60,6 +60,11 @@ export function useEmbassaments() {
   };
 
   onMounted(getEmbassaments);
+
+  //Filtras los embalses para eliminar duplicados y exportas el resultado filtrado.
+  //No filtras Pokémon, porque ya son únicos, y los exportas directamente.
+  //Las funciones de obtención de detalles (getDetallEmbassament y getPokemonDetail) se exportan, 
+  // porque se usan bajo demanda (parametro) que se encuentra en la vista.
 
   return { uniqueEmbassaments, dades, getDetallEmbassament };
 }

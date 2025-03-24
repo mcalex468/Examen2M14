@@ -22,10 +22,11 @@ const userId = ref(route.params.userId);
 const { postsUserId, getPostsUserId } = usePosts();
 
 // Verificar si userId es correcto
-console.log("User ID recibido:", userId.value);
+//console.log("User ID recibido:", userId.value);
 
 // Obtener posts al montar el componente
 onMounted(() => {
+    // Usamos el .value porque es una variable REACTIVA
     getPostsUserId(userId.value);
 });
 </script>

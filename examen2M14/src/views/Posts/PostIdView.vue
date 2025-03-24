@@ -13,9 +13,11 @@ import { onMounted } from 'vue';
 import { usePosts } from '@/composables/usePosts.js';
 
 const route = useRoute();
+const id = route.params.id;
 const { postsId, getPostsId } = usePosts();
 
 onMounted(() => {
-    getPostsId(route.params.id);
+    // Usamos la variable SIN .value porque es un String ...
+    getPostsId(id);
 });
 </script>

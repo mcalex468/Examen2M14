@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export function usePosts() {
     const posts = ref([]);
-    const postsId = ref({}); // SOLO DEVUELVE 1, USAMOS UN OBJETO
+    const postsId = ref({}); // SOLO DEVUELVE 1, USAMOS {UN OBJETO}
     const postsUserId = ref([]);
 
     // REGLA DE ORO 
@@ -45,5 +45,5 @@ export function usePosts() {
     // Llamar a getPosts al montar el componente
     onMounted(getPosts);
 
-    return { posts, postsId, postsUserId, getPosts, getPostsId, getPostsUserId };
+    return { posts, postsId, postsUserId, getPostsId, getPostsUserId };
 }
