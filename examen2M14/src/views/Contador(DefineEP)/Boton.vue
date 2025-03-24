@@ -1,4 +1,5 @@
 <template>
+    <!-- Utilizamos el Prop que recibimos => Texto (String)-->
     <button @click="$emit('accion')">{{ texto }}</button>
 </template>
 
@@ -9,7 +10,8 @@ defineProps({
     texto: String // Texto del botón (ejemplo: texto="Sumar", texto="Restar")
 });
 
-defineEmits(['accion']); // Evento que se emitirá cuando se haga clic
+defineEmits(['accion']);
+// Evento que se emitirá cuando se haga clic
 </script>
 
 <style scoped>

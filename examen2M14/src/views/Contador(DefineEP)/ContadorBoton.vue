@@ -1,7 +1,9 @@
 <template>
     <div class="contador">
         <h1>Contador: {{ contador }}</h1>
+        <!-- Nombre de la funcion emit se utiliza en el @click => @accion -->
         <BotonAccion texto="Sumar" @accion="incrementar" />
+        <!-- Pasamos TEXTO="Restar" como prop , ya que esto es el componente-->
         <BotonAccion texto="Restar" @accion="decrementar" />
     </div>
 </template>
