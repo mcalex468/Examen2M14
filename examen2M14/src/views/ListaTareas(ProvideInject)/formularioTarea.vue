@@ -12,7 +12,9 @@ const nuevaTarea = ref('');
 const agregarTarea = inject('agregarTarea');
 
 const añadir = () => {
+    // Eliminamos espacios Inicio y Fin
     if (nuevaTarea.value.trim()) {
+        // Limpiamos el recuadro
         agregarTarea(nuevaTarea.value);
         nuevaTarea.value = '';
     }
