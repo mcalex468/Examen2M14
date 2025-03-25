@@ -1,5 +1,5 @@
 <template>
-    <div v-if="postsId.title">
+    <div v-if="postsId">
         <h2>ID: {{ postsId.id }}</h2>
         <h3>TITLE: {{ postsId.title }}</h3>
         <p>BODY: {{ postsId.body }}</p>
