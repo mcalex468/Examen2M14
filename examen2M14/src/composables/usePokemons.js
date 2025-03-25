@@ -4,6 +4,7 @@ import axios from 'axios';
 export function usePokemons() {
     const pokemons = ref([]);
     const pokemonDetail = ref([]); // Mantener como array
+    // const pokemonDetail = ref({}); // Si solo devuelve 1 cosa mejor asi y luego usar v-if de la variable y printar los datos en la vista
     const loading = ref(false);
     const error = ref(null);
 

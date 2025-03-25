@@ -4,6 +4,7 @@
         <p v-if="loading">Cargando datos...</p>
         <p v-if="error">{{ error }}</p>
 
+        <!-- Aqui usar v-if="pokemonDetail" si utilizaramos en el USEPOKEMONS un podemonDetail = ref({})-->
         <div v-for="pokemon in pokemonDetail" :key="pokemon.name" class="pokemon-detall">
             <h2>{{ pokemon.name }}</h2>
             <p><strong>Base Experience:</strong> {{ pokemon.base_experience }}</p>

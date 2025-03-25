@@ -11,7 +11,8 @@
 </template>
 
 <script setup>
+// Import Composable
 import { usePosts } from '@/composables/usePosts.js';
-
+// Cogemos la Variable retornada en el usePosts()
 const { posts } = usePosts();
 </script>
